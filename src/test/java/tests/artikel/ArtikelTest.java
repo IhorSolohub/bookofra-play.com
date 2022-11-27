@@ -27,6 +27,7 @@ public class ArtikelTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void headerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -74,16 +75,6 @@ public class ArtikelTest extends BaseTest {
             basePage.back(ARTIKEL_PAGE_URL);
         }
         assertEquals(NUMBER_OF_WEITER_LESSEN_READ_MORE_BUTTON_ARTIKEL_PAGE, goodTitlesCount);
-    }
-
-    @Test
-    public void successfulCommentFormTest () {
-        artikelPage.enterName(NAME)
-                .enterEmail(EMAIL)
-                .enterComment(COMMENT)
-                .submitButtonClick();
-        basePage.waitTwoSeconds();
-        assertTrue(artikelPage.submitMessageVisibleCheck());
     }
 
 }

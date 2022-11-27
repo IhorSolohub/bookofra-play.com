@@ -28,8 +28,6 @@ public class OnlineCasinosTest extends BaseTest {
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.waitOneSeconds();
-            basePage.headerOpenClick();
-            basePage.waitOneSeconds();
             basePage.headerButtonClick(i);
             basePage.waitOneSeconds();
             if (basePage.checkTitles(HEADER_TITLES)) { goodTitlesCount++; }
@@ -64,6 +62,7 @@ public class OnlineCasinosTest extends BaseTest {
     public void ubersichtRegButtonTest () {
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_UBERSICHT_BUTTON_ONLINE_CASINOS_PAGE; i++) {
+            if (i == 4) { onlineCasinosPage.closeSecondPopupClick(); }
             basePage.waitTwoSeconds();
             onlineCasinosPage.ubersichtRegButtonClick(i);
             basePage.nextTab();

@@ -11,7 +11,7 @@ public class ArtikelPage extends BasePage {
     private final By nameInput = By.xpath("//input[@id='author']");
     private final By emailInput= By.xpath("//input[@id='email']");
     private final By commentIInput = By.xpath("//textarea[@id='comment']");
-    private final By sendButton = By.xpath("//input[@id='submit_button']");
+    private final By sendButton = By.xpath("//input[@class='form_s']");
     private final By submitMessage = By.xpath("//div[@id='form-message']");
 
 

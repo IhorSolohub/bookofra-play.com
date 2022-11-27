@@ -24,6 +24,7 @@ public class ArtikelCategoryTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void headerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.waitOneSeconds();

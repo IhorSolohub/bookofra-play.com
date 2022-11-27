@@ -25,7 +25,7 @@ public class BasePage {
 
     private final By mainLogoButton = By.xpath("//a[@class='logo']");
     private final By headerOpen = By.xpath("//span[@class='button_menu toggle_menu visible_sm visible_xs']");
-    private final By popupCloseButton = By.xpath("//a[@class='lp-confirm-close']");
+    private final By popupCloseButton = By.xpath("//span[@id='lp-confirm-close']");
 
     /**
      * ///////////// Common methods /////////////
@@ -218,7 +218,7 @@ public class BasePage {
     }
 
     public BasePage headerOpenClick () {
-        By checkHeader = By.xpath("//li[@class='menu-item']");
+        By checkHeader = By.xpath("(//li[@class='menu-item'])[2]");
         if (!elementVisibleCheck(checkHeader)) {
             driver.findElement(headerOpen).click();
         }
