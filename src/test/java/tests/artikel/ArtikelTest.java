@@ -18,15 +18,11 @@ import static org.testng.Assert.assertTrue;
 
 public class ArtikelTest extends BaseTest {
 
-    @BeforeMethod
-    public void setUp () {
+    @Test(invocationCount = 2, successPercentage = 99)
+    public void headerButtonsTest () {
         startDriver("artikel");
         basePage.goToUrl(ARTIKEL_PAGE_URL);
         basePage.waitOneSeconds();
-    }
-
-    @Test(invocationCount = 2, successPercentage = 99)
-    public void headerButtonsTest () {
         basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
@@ -44,6 +40,9 @@ public class ArtikelTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void footerButtonsTest () {
+        startDriver("artikel");
+        basePage.goToUrl(ARTIKEL_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_FOOTER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -58,6 +57,9 @@ public class ArtikelTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        startDriver("artikel");
+        basePage.goToUrl(ARTIKEL_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
@@ -65,6 +67,9 @@ public class ArtikelTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void weiterLessenButtonTest () {
+        startDriver("artikel");
+        basePage.goToUrl(ARTIKEL_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_WEITER_LESSEN_READ_MORE_BUTTON_ARTIKEL_PAGE; i++) {
             basePage.waitOneSeconds();

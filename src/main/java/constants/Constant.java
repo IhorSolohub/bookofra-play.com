@@ -110,7 +110,9 @@ public class Constant {
                 "Timber Jack",
                 "Neue ausgezeichnete Glücksspielautomaten von Play",
                 "Hilft wirklich die Sperrdatei bei",
-                "Verde Casino"
+                "Verde Casino",
+                "Push Gaming veröffentlicht",
+                "Neue ausgezeichnete"
         );
         public static final List<String> AUTHORS_TITLES = Arrays.asList(
                 "Denis Carter"

@@ -17,16 +17,11 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class MainTest extends BaseTest {
-
-    @BeforeMethod
-    public void setUp () {
+    @Test(invocationCount = 2, successPercentage = 99)
+    public void headerButtonsTest () {
         startDriver("main");
         basePage.goToUrl(MAIN_PAGE_URL);
         basePage.waitOneSeconds();
-    }
-
-    @Test(invocationCount = 2, successPercentage = 99)
-    public void headerButtonsTest () {
         basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
@@ -44,6 +39,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void footerButtonsTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_FOOTER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -58,6 +56,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
@@ -65,6 +66,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void umGeldSpielenOnSlotButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.waitOneSeconds();
         mainPage.umGeldSpielenOnSlotButtonClick();
         basePage.nextTab();
@@ -76,6 +80,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void umGeldSpielenRegButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 3; i <= 4; i++) {
             basePage.waitOneSeconds();
@@ -91,6 +98,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void lezteArtikelWeiterLessenButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_LAST_ARTICLES_READ_MORE_BUTTON_MAIN_PAGE; i++) {
             basePage.waitOneSeconds();
@@ -105,6 +115,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void readMoreCommentsButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.waitTwoSeconds();
         mainPage.readMoreCommentsButtonClick();
         basePage.waitTwoSeconds();

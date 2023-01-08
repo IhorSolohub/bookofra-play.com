@@ -15,15 +15,11 @@ import static org.testng.Assert.assertEquals;
 
 public class ArtikelCategoryTest extends BaseTest {
 
-    @BeforeMethod
-    public void setUp () {
+    @Test(invocationCount = 2, successPercentage = 99)
+    public void headerButtonsTest () {
         startDriver("artikelCategory");
         basePage.goToUrl(ARTIKEL_CATEGORY_URL);
         basePage.waitOneSeconds();
-    }
-
-    @Test(invocationCount = 2, successPercentage = 99)
-    public void headerButtonsTest () {
         basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
@@ -41,6 +37,9 @@ public class ArtikelCategoryTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void footerButtonsTest () {
+        startDriver("artikelCategory");
+        basePage.goToUrl(ARTIKEL_CATEGORY_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_FOOTER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -55,6 +54,9 @@ public class ArtikelCategoryTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        startDriver("artikelCategory");
+        basePage.goToUrl(ARTIKEL_CATEGORY_URL);
+        basePage.waitOneSeconds();
         basePage.closePopup();
         basePage.waitOneSeconds();
         basePage.mainLogoButtonClick();
@@ -64,6 +66,9 @@ public class ArtikelCategoryTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void weiterLessenButtonTest () {
+        startDriver("artikelCategory");
+        basePage.goToUrl(ARTIKEL_CATEGORY_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_ARTIKEL_BUTTON_MAIN_PAGE; i++) {
             basePage.waitOneSeconds();
@@ -78,6 +83,9 @@ public class ArtikelCategoryTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void nextPageButtonTest () {
+        startDriver("artikelCategory");
+        basePage.goToUrl(ARTIKEL_CATEGORY_URL);
+        basePage.waitOneSeconds();
         basePage.waitTwoSeconds();
         artikelCategory.nextPageButtonClick();
         basePage.waitTwoSeconds();
