@@ -55,6 +55,8 @@ public class ArtikelCategoryTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        basePage.closePopup();
+        basePage.waitOneSeconds();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());

@@ -25,6 +25,7 @@ public class OnlineCasinosTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void headerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -53,6 +54,7 @@ public class OnlineCasinosTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        basePage.closePopup();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
@@ -60,9 +62,11 @@ public class OnlineCasinosTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void ubersichtRegButtonTest () {
+        basePage.closePopup();
+        basePage.waitThirtySeconds();
+        onlineCasinosPage.closeSecondPopupClick();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_UBERSICHT_BUTTON_ONLINE_CASINOS_PAGE; i++) {
-            if (i == 4) { onlineCasinosPage.closeSecondPopupClick(); }
             basePage.waitTwoSeconds();
             onlineCasinosPage.ubersichtRegButtonClick(i);
             basePage.nextTab();
