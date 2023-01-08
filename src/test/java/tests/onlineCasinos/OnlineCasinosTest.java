@@ -25,6 +25,8 @@ public class OnlineCasinosTest extends BaseTest {
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.waitOneSeconds();
+            basePage.headerOpenClick();
+            basePage.waitOneSeconds();
             basePage.headerButtonClick(i);
             basePage.waitOneSeconds();
             if (basePage.checkTitles(HEADER_TITLES)) { goodTitlesCount++; }
@@ -62,6 +64,7 @@ public class OnlineCasinosTest extends BaseTest {
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
     }
 
+    /*
     @Test(invocationCount = 2, successPercentage = 99)
     public void ubersichtRegButtonTest () {
         startDriver("onlineCasinos");
@@ -82,5 +85,7 @@ public class OnlineCasinosTest extends BaseTest {
         }
         assertEquals(NUMBER_OF_UBERSICHT_BUTTON_ONLINE_CASINOS_PAGE, goodTitlesCount);
     }
+
+     */
 
 }

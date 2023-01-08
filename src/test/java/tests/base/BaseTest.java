@@ -29,7 +29,7 @@ public class BaseTest {
                 driver = CommonActions.createDriver("CHROME", 360, 640);
                 break;
             case "onlineCasinos" :
-                driver = CommonActions.createDriver("CHROME", 1366, 1024);
+                driver = CommonActions.createDriver("CHROME", 1024, 1366);
                 break;
         }
         basePage = new BasePage(driver);
